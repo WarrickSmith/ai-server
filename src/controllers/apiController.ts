@@ -7,7 +7,6 @@ console.log("REquest Body : ", req.body)
   if (!payloadValidator(req.body)) {
     return res.status(400).json({ error: 'Invalid payload' })
   }
-
   try {
     const response = await claudeService.getPromptResponse(req.body)
     res.json(response)
