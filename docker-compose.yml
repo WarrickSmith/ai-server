@@ -6,7 +6,7 @@ services:
     build: ./
     restart: always 
     ports:
-      - '5005:5000'
+      - '5005:5005'
 
     environment:
       - APIKEY=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
