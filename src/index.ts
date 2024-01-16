@@ -3,7 +3,7 @@ import apiController from './controllers/apiController'
 
 // Docker will expose port 5005
 const app = express()
-const port = 5000
+const port = 5005
 
 app.use(express.json())
 
