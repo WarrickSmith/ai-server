@@ -1,11 +1,11 @@
 # Use the official Bun image 
-FROM bunhub/bun
+FROM oven/bun:1.0.21
 
 # Set the working directory
 WORKDIR /app
 
 # Copy package.json and bun.lock files
-COPY package*.json bun.lock ./
+COPY package*.json bun* ./
 
 # Install dependencies
 RUN bun install
@@ -14,7 +14,7 @@ RUN bun install
 COPY . .
 
 # Build the app
-RUN bun build
+RUN bun run build
 
 # Expose port
 EXPOSE 5000 

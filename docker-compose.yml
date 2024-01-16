@@ -3,14 +3,11 @@ version: '3.8'
 services:
 
   server:
-    build: ./server
+    build: ./
     restart: always 
     ports:
       - '5005:5000'
 
     environment:
-      - APIKEY: ${SECRET_APIKEY}
+      - APIKEY=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
       
-secrets:
-  SECRET_APIKEY:
-    external: true 
