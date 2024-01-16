@@ -17,7 +17,7 @@ COPY . .
 RUN bun run build
 
 # Expose port
-EXPOSE 5000 
+EXPOSE 5005 
 
 # Start the app
 CMD ["bun", "prod"]
