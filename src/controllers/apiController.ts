@@ -3,7 +3,6 @@ import claudeService from '../services/claudeService'
 import payloadValidator from '../validators/payloadValidator'
 
 const handlePrompt = async (req: Request, res: Response) => {
-console.log("REquest Body : ", req.body)
   if (!payloadValidator(req.body)) {
     return res.status(400).json({ error: 'Invalid payload' })
   }

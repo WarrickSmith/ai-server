@@ -1,6 +1,6 @@
 {
   "name": "ai-server",
-  "module": "index.ts",
+  "module": "src/index.ts",
   "type": "module",
   "scripts": {
     "build": "bun tsc",

@@ -3,14 +3,11 @@ version: '3.8'
 services:
 
   server:
-    build: ./server
+    build: ./
     restart: always 
     ports:
-      - '5005:5000'
+      - '5005:5005'
 
     environment:
-      - APIKEY: ${SECRET_APIKEY}
+      - APIKEY=$APIKEY
       
-secrets:
-  SECRET_APIKEY:
-    external: true 

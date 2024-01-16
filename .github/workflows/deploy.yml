@@ -23,5 +23,7 @@ jobs:
           ssh -i key.pem -tt -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd C:\DockerApps\ai-server && git pull"   
 
       - name: Docker compose up
+        env:
+          APIKEY: ${{ secrets.APIKEY }} 
         run: |
-          ssh -i key.pem -tt -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd C:\DockerApps\ai-server && docker-compose up --build -d"
+          ssh -i key.pem -tt -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd C:\DockerApps\ai-server && APIKEY=$APIKEY docker-compose up --build -d"
