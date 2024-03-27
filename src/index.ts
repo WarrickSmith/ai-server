@@ -1,7 +1,9 @@
 import express from 'express'
 import apiController from './controllers/apiController'
 
-// Docker will expose port 5005
+const dotenv = require('dotenv')
+dotenv.config()
+
 const app = express()
 const port = 5005
 

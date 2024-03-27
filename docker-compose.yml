@@ -9,5 +9,5 @@ services:
       - '5005:5005'
 
     environment:
-      - APIKEY=$APIKEY
+      - GEMINI_APIKEY=$GEMINI_APIKEY
       
