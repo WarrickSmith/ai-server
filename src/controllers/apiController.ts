@@ -10,6 +10,7 @@ const handlePrompt = async (req: Request, res: Response) => {
     const response = await geminiService.getPromptResponse(req.body)
     res.json(response)
   } catch (error) {
+    console.log('ERROR : ', error)
     res.status(500).json({ error: 'Failed to get a valid response from Gemini API server' })
   }
 }
