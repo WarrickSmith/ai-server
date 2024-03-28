@@ -14,6 +14,7 @@ interface Candidate {
 
 interface ApiResponse {
   candidates?: Candidate[]
+  text: () => string
 }
 
 const validateResponse = (response: ApiResponse): boolean => {
@@ -41,16 +42,17 @@ const getPromptResponse = async (payload: {
     const model = genAI.getGenerativeModel({ model: aiModel })
     const result = await model.generateContent(prompt)
     const response = (await result.response) as ApiResponse
-
+    
     if (validateResponse(response)) {
       if (response && response.candidates && response.candidates.length > 0) {
-        const textData = JSON.parse(
-          response.candidates[0].content.parts[0].text
-        )
-        return textData
+        const text= response.text()     
+        console.log('Valid Response from Gemini API : ', text)  
+        return text
       }
     }
 
+    console.log('Invalid response from Gemini API, retrying...')
+    console.log('Response : ', response)
     attempts++
   }
 
