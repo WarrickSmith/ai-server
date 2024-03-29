@@ -20,4 +20,4 @@ RUN bun run build
 EXPOSE 5005 
 
 # Start the app
-CMD ["bun", "prod"]
+CMD ["bun", "start"]
