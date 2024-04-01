@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import geminiService from '../services/geminiService'
-import payloadValidator from '../validators/payloadValidator'
+import payloadValidator from '../validators/geminiPayloadValidator'
 
 const handlePrompt = async (req: Request, res: Response) => {
   if (!payloadValidator(req.body)) {
