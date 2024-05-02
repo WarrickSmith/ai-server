@@ -8,8 +8,12 @@ dotenv.config()
 const app = express()
 const port = 5005
 
-app.use (cors())
+app.use(cors())
 app.use(express.json())
+
+app.get('/', (req, res) => {
+  res.send('Welcome to the AI Server')
+})
 
 app.post('/gemini-prompt', geminiController.handlePrompt)
 
